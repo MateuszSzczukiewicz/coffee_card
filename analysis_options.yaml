@@ -19,4 +19,4 @@ linter:
     prefer_final_locals: true
 
 formatter:
-  page_width: 60
+  page_width: 40
