@@ -17,6 +17,3 @@ linter:
     avoid_returning_null_for_future: true
     avoid_empty_else: true
     prefer_final_locals: true
-
-formatter:
-  page_width: 40
