@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rpg/models/character.dart';
-import 'package:flutter_rpg/screens/shared/styled_text.dart';
+import 'package:flutter_rpg/shared/styled_text.dart';
 import 'package:flutter_rpg/theme.dart';
 
 class CharacterCard extends StatelessWidget {
