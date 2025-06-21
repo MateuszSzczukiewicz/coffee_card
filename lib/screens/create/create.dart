@@ -2,23 +2,25 @@ import 'package:flutter_rpg/models/character.dart';
 import 'package:flutter_rpg/models/vocations.dart';
 import 'package:flutter_rpg/screens/create/vocation_card.dart';
 import 'package:flutter_rpg/screens/home/home.dart';
+import 'package:flutter_rpg/services/character_store.dart';
 import 'package:flutter_rpg/shared/styled_button.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rpg/shared/styled_text.dart';
 import 'package:flutter_rpg/theme.dart';
+import 'package:provider/provider.dart';
 import 'package:uuid/uuid.dart';
 
 Uuid uuid = const Uuid();
 
-class Create extends StatefulWidget {
-  const Create({super.key});
+class CreateScreen extends StatefulWidget {
+  const CreateScreen({super.key});
 
   @override
-  State<Create> createState() => _CreateState();
+  State<CreateScreen> createState() => _CreateState();
 }
 
-class _CreateState extends State<Create> {
+class _CreateState extends State<CreateScreen> {
   final _nameController = TextEditingController();
   final _sloganController = TextEditingController();
 
@@ -86,7 +88,7 @@ class _CreateState extends State<Create> {
       return;
     }
 
-    characters.add(
+    Provider.of<CharacterStore>(context, listen: false).addCharacter(
       Character(
         name: _nameController.text.trim(),
         slogan: _sloganController.text.trim(),
@@ -94,6 +96,7 @@ class _CreateState extends State<Create> {
         id: uuid.v4(),
       ),
     );
+
     Navigator.push(
       context,
       MaterialPageRoute<void>(builder: (ctx) => const Home()),
@@ -115,7 +118,9 @@ class _CreateState extends State<Create> {
               Center(child: Icon(Icons.code, color: AppColors.primaryColor)),
               const Center(child: StyledHeading('Welcome, new player.')),
               const Center(
-                child: StyledText('Create a name & slogan for your character.'),
+                child: StyledText(
+                  'CreateScreen a name & slogan for your character.',
+                ),
               ),
               const SizedBox(height: 30),
 
@@ -180,7 +185,7 @@ class _CreateState extends State<Create> {
               Center(
                 child: StyledButton(
                   onPressed: handleSubmit,
-                  child: const StyledHeading('Create Character'),
+                  child: const StyledHeading('CreateScreen Character'),
                 ),
               ),
             ],
