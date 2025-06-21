@@ -10,7 +10,7 @@ class Character with Stats {
     required this.id,
   });
 
-  final Set<Skill> skills = {};
+  final Set<Skill> skills = <Skill>{};
   final Vocation vocation;
   final String name;
   final String slogan;
@@ -31,7 +31,7 @@ class Character with Stats {
 
 // dummy character data
 
-List<Character> characters = [
+List<Character> characters = <Character>[
   Character(
     id: '1',
     name: 'Klara',
@@ -40,7 +40,7 @@ List<Character> characters = [
   ),
   Character(
     id: '2',
-    name: 'Jonny',
+    name: 'Johnny',
     vocation: Vocation.junkie,
     slogan: 'Light me up...',
   ),

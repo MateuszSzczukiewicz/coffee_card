@@ -9,6 +9,7 @@ analyzer:
   errors:
     missing_return: error
     prefer_single_quotes: warning
+    avoid_print: warning
 
 linter:
   rules:
@@ -17,3 +18,8 @@ linter:
     avoid_returning_null_for_future: true
     avoid_empty_else: true
     prefer_final_locals: true
+    curly_braces_in_flow_control_structures: true
+    sort_child_properties_last: true
+    use_key_in_widget_constructors: true
+    unnecessary_const: true
+    unnecessary_null_checks: true

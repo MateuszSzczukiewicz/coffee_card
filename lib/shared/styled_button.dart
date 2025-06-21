@@ -15,7 +15,7 @@ class StyledButton extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [AppColors.primaryColor, AppColors.primaryAccent],
+            colors: <Color>[AppColors.primaryColor, AppColors.primaryAccent],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),

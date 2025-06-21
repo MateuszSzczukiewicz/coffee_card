@@ -14,7 +14,7 @@ class Skill {
   });
 }
 
-final List<Skill> allSkills = [
+final List<Skill> allSkills = <Skill>[
   // algo wizard skills
   Skill(
     id: '1',

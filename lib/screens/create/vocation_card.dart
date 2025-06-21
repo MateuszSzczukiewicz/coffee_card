@@ -26,7 +26,7 @@ class VocationCard extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(8),
           child: Row(
-            children: [
+            children: <Widget>[
               Image.asset(
                 'assets/img/vocations/${vocation.image}',
                 width: 80,
@@ -40,7 +40,7 @@ class VocationCard extends StatelessWidget {
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+                  children: <Widget>[
                     StyledHeading(vocation.title),
                     StyledText(vocation.description),
                   ],
